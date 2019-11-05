@@ -12,9 +12,15 @@ Rails.application.routes.draw do
   match("/photos/:id", {:controller => "application", :action => "photo_details", :via => "get"} )
   match("/photos/:id/likes", {:controller => "application", :action => "photo_likes", :via => "get"} )
   match("/photos/:id/fans", {:controller => "application", :action => "photo_fans", :via => "get"} )
+  match("/photos/:id/comments", {:controller => "application", :action => "photo_comments", :via => "get"} )
 
   #Insert
   match("/insert_like_record", {:controller => "application", :action => "insert_like_record", :via => "get"} )
+  match("/delete_like/:id", {:controller => "application", :action => "delete_like_record", :via => "get"} )
+
+  #comments
+  match("/insert_comment_record", {:controller => "application", :action => "insert_comment_record", :via => "get"} )
+  match("/update_comment_record/:id", {:controller => "application", :action => "update_comment_record", :via => "get"} )
 
 
   # =================================================
